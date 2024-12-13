@@ -1158,15 +1158,17 @@
             <h3 class="h3 form-title">Contact Form</h3>
 
             <form
-              action="data.php"
+              action="https://api.web3forms.com/submit"
               class="form"
               data-form
               method="post"
             >
               <div class="input-wrapper">
+                <input type="hidden" name="access_key" value="feada637-5124-4ddf-abef-567a10009d6e">
+                
                 <input
                   type="text"
-                  name="fullname"
+                  name="name"
                   class="form-input"
                   placeholder="Full name"
                   required
