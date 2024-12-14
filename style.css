@@ -2038,7 +2038,7 @@ textarea.form-input::-webkit-resizer { display: none; }
 }	 
 
 
-/* Space-Themed Background */
+/* Space-Themed Background *
 #particles-js {
   position: absolute;
   top: 0;
@@ -2048,7 +2048,7 @@ textarea.form-input::-webkit-resizer { display: none; }
   z-index: -1;
 }
 
-/* SVG Hollow Text Styling */
+/* SVG Hollow Text Styling *
 .hollow-text {
   fill: none;
   stroke: var(--light-gray);
@@ -2061,7 +2061,7 @@ textarea.form-input::-webkit-resizer { display: none; }
   animation: revealText 5s forwards, strokeFill 3s 2s forwards, fillLetters 2s 5s forwards;
 }
 
-/* Text Reveal Animation */
+/* Text Reveal Animation *
 @keyframes revealText {
   0% {
     opacity: 0;
@@ -2084,7 +2084,7 @@ textarea.form-input::-webkit-resizer { display: none; }
   }
 }
 
-/* Stroke Animation */
+/* Stroke Animation *
 @keyframes strokeFill {
   0% {
     stroke-dasharray: 500px;
@@ -2095,7 +2095,7 @@ textarea.form-input::-webkit-resizer { display: none; }
   }
 }
 
-/* Fill Letters Animation */
+/* Fill Letters Animation *
 @keyframes fillLetters {
   0% {
     fill: none;
@@ -2105,7 +2105,7 @@ textarea.form-input::-webkit-resizer { display: none; }
   }
 }
 
-/* Morphing Ball Animation */
+/* Morphing Ball Animation *
 .ball {
   position: absolute;
   width: 0;
@@ -2149,7 +2149,7 @@ textarea.form-input::-webkit-resizer { display: none; }
   }
 }
 
-/* Explosion Animation */
+/* Explosion Animation *
 @keyframes blastAway {
   0% {
     transform: scale(1);
@@ -2165,6 +2165,114 @@ textarea.form-input::-webkit-resizer { display: none; }
   animation: blastAway 2s forwards;
 }
 
+/* Content Reveal *
+.content {
+  opacity: 0;
+  transition: opacity 2s ease;
+}
+
+.content.show {
+  opacity: 1;
+} 
+
+
+
+/* Space-Themed Background */
+#particles-js {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+/* SVG Hollow Text Styling */
+.hollow-text {
+  fill: none;
+  stroke: var(--light-gray);
+  stroke-width: 2px;
+  font-size: 120px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 10px;
+  opacity: 0;
+  animation: textReveal 3s ease-in-out forwards, wordByWordFill 3s 3s forwards;
+}
+
+/* Text Reveal Animation */
+@keyframes textReveal {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Word-by-Word Fill */
+@keyframes wordByWordFill {
+  0%, 25% {
+    fill: none;
+  }
+  50% {
+    fill: #00ccff; /* Word 1 fills */
+  }
+  75% {
+    fill: #ffffff; /* Word 2 fills */
+  }
+  100% {
+    fill: #ffffff; /* Final fill */
+  }
+}
+
+/* Morphing Ball Animation */
+.ball {
+  position: absolute;
+  width: 0;
+  height: 0;
+  background: var(--white-2);
+  border-radius: 50%;
+  opacity: 0;
+  transform-origin: center;
+  animation: morphToBall 3s 6s ease-in-out forwards;
+}
+
+@keyframes morphToBall {
+  0% {
+    width: 0;
+    height: 0;
+  }
+  50% {
+    width: 100px;
+    height: 100px;
+    clip-path: polygon(20% 30%, 80% 10%, 90% 80%, 10% 90%);
+  }
+  100% {
+    width: 150px;
+    height: 150px;
+    clip-path: circle(50%);
+  }
+}
+
+/* Explosion Animation */
+@keyframes blastAway {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(5);
+    opacity: 0;
+  }
+}
+
+.ball.blast-away {
+  animation: blastAway 1.5s forwards;
+}
+
 /* Content Reveal */
 .content {
   opacity: 0;
@@ -2173,8 +2281,9 @@ textarea.form-input::-webkit-resizer { display: none; }
 
 .content.show {
   opacity: 1;
-}
-
+	}
+	    
+	
 
 /* Scroll to Top Button */
 .scroll-top-button {
