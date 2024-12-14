@@ -1916,7 +1916,8 @@ textarea.form-input::-webkit-resizer { display: none; }
     transform: translateY(-1rem);
   }
 }*/
-/* Preloader Styling 
+
+/* Preloader Styling */
 .preloader {
   position: fixed;
   top: 0;
@@ -1947,7 +1948,7 @@ textarea.form-input::-webkit-resizer { display: none; }
   letter-spacing: 10px;
 }
 
-/* Fluid Fill Animation *
+/* Fluid Fill Animation */
 .hollow-text {
   stroke-dasharray: 500px;
   stroke-dashoffset: 500px;
@@ -1972,62 +1973,8 @@ textarea.form-input::-webkit-resizer { display: none; }
   }
 }
 
-/* Shaking Effect *
-@keyframes shake {
-  0%, 100% {
-    transform: translate(0, 0);
-  }
-  25% {
-    transform: translate(5px, -5px);
-  }
-  50% {
-    transform: translate(-5px, 5px);
-  }
-  75% {
-    transform: translate(5px, 5px);
-  }
-}
 
-/* Irregular Ball Transformation *
-.blast {
-  position: absolute;
-  width: 150px;
-  height: 150px;
-  background: var(--white-2);
-  border-radius: 50%;
-  animation: morphToBall 3s 6s ease-in-out forwards, shake 1s 6s infinite ease-in-out;
-  transform-origin: center;
-}
-
-@keyframes morphToBall {
-  0% {
-    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
-  }
-  50% {
-    clip-path: polygon(10% 20%, 80% 5%, 95% 80%, 5% 90%);
-  }
-  100% {
-    clip-path: circle(50%);
-  }
-}
-
-/* Explosion Effect 
-@keyframes blastAway {
-  0% {
-    transform: scale(1);
-    opacity: 1;
-  }
-  100% {
-    transform: scale(5);
-    opacity: 0;
-  }
-}
-
-.blast.blast-away {
-  animation: blastAway 1s forwards;
-}
-
-/* Reveal Content 
+/* Reveal Content */
 .content {
   opacity: 0;
   transition: opacity 1s ease;
@@ -2038,7 +1985,7 @@ textarea.form-input::-webkit-resizer { display: none; }
 }	 
 
 
-/* Space-Themed Background *
+/* Space-Themed Background */
 #particles-js {
   position: absolute;
   top: 0;
@@ -2177,7 +2124,7 @@ textarea.form-input::-webkit-resizer { display: none; }
 
 
 
-/* Space-Themed Background */
+/* Space-Themed Background *
 #particles-js {
   position: absolute;
   top: 0;
@@ -2187,7 +2134,7 @@ textarea.form-input::-webkit-resizer { display: none; }
   z-index: -1;
 }
 
-/* SVG Hollow Text Styling */
+/* SVG Hollow Text Styling *
 .hollow-text {
   fill: none;
   stroke: var(--light-gray);
@@ -2200,7 +2147,7 @@ textarea.form-input::-webkit-resizer { display: none; }
   animation: textReveal 3s ease-in-out forwards, wordByWordFill 3s 3s forwards;
 }
 
-/* Text Reveal Animation */
+/* Text Reveal Animation *
 @keyframes textReveal {
   0% {
     opacity: 0;
@@ -2212,7 +2159,7 @@ textarea.form-input::-webkit-resizer { display: none; }
   }
 }
 
-/* Word-by-Word Fill */
+/* Word-by-Word Fill *
 @keyframes wordByWordFill {
   0%, 25% {
     fill: none;
@@ -2228,7 +2175,7 @@ textarea.form-input::-webkit-resizer { display: none; }
   }
 }
 
-/* Morphing Ball Animation */
+/* Morphing Ball Animation *
 .ball {
   position: absolute;
   width: 0;
@@ -2257,7 +2204,7 @@ textarea.form-input::-webkit-resizer { display: none; }
   }
 }
 
-/* Explosion Animation */
+/* Explosion Animation *
 @keyframes blastAway {
   0% {
     transform: scale(1);
@@ -2273,7 +2220,7 @@ textarea.form-input::-webkit-resizer { display: none; }
   animation: blastAway 1.5s forwards;
 }
 
-/* Content Reveal */
+/* Content Reveal *
 .content {
   opacity: 0;
   transition: opacity 2s ease;
@@ -2285,38 +2232,38 @@ textarea.form-input::-webkit-resizer { display: none; }
 	    
 	
 
-/* Scroll to Top Button */
+/* Scroll to Top Button *
 .scroll-top-button {
   position: fixed;
-  bottom: 70px; /* Position it above the navbar */
+  bottom: 70px; /* Position it above the navbar *
   right: 30px;
   background: var(--orange-yellow-crayola);
   color: var(--smoky-black);
-  border-radius: 5px; /* Square with rounded corners */
+  border-radius: 5px; /* Square with rounded corners *
   padding: 10px 15px;
   font-size: 20px;
   border: none;
   cursor: pointer;
-  z-index: 1000; /* Make sure it's always on top */
+  z-index: 1000; /* Make sure it's always on top *
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   transition: background 0.3s, box-shadow 0.3s;
 }
 
-/* Make the button always visible */
+/* Make the button always visible *
 .scroll-top-button.visible {
   opacity: 1;
   visibility: visible;
 }
 
-/* Add hover effect */
+/* Add hover effect *
 .scroll-top-button:hover {
   background: var(--light-gray-70);
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
 }
 
-/* Optional: Active state for smooth press effect */
+/* Optional: Active state for smooth press effect *
 .scroll-top-button:active {
   background: var(--white-2);
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 	}
-	
+	*/
