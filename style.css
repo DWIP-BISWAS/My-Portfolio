@@ -1917,25 +1917,38 @@ textarea.form-input::-webkit-resizer { display: none; }
   }
 }
 
-
 /* Scroll to Top Button */
 .scroll-top-button {
   position: fixed;
-  bottom: 30px;
+  bottom: 70px; /* Position it above the navbar */
   right: 30px;
   background: var(--orange-yellow-crayola);
   color: var(--smoky-black);
-  border-radius: 50%;
-  padding: 10px;
+  border-radius: 5px; /* Square with rounded corners */
+  padding: 10px 15px;
   font-size: 20px;
   border: none;
   cursor: pointer;
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.3s, visibility 0.3s;
+  z-index: 1000; /* Make sure it's always on top */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: background 0.3s, box-shadow 0.3s;
 }
 
+/* Make the button always visible */
 .scroll-top-button.visible {
   opacity: 1;
   visibility: visible;
+}
+
+/* Add hover effect */
+.scroll-top-button:hover {
+  background: var(--light-gray-70);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Optional: Active state for smooth press effect */
+.scroll-top-button:active {
+  background: var(--white-2);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 	}
+	
