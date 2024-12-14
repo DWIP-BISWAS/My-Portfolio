@@ -37,15 +37,15 @@
   // Trigger explosion effect
   setTimeout(() => {
     blast.classList.add("blast-away");
-  }, 9000); // After morphing completes
+  }, 8000); // After morphing completes
 
   // Reveal homepage
   setTimeout(() => {
     preloader.style.display = "none";
     content.classList.add("show");
-  }, 10000); // After explosion effect
+  }, 9000); // After explosion effect
 });
-*
+/*
 document.addEventListener("DOMContentLoaded", () => {
   const preloader = document.querySelector(".preloader");
   const ball = document.querySelector(".ball");
