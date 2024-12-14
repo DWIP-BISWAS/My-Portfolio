@@ -1955,6 +1955,15 @@ textarea.form-input::-webkit-resizer { display: none; }
   animation: strokeFill 3s ease forwards, fillLetters 3s 3s ease forwards;
 }
 
+@keyframes strokeFill {
+  0% {
+    stroke-dashoffset: 500px;
+  }
+  100% {
+    stroke-dashoffset: 0px;
+  }
+}
+
 /* Reveal Content */
 .content {
   opacity: 0;
