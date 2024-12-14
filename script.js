@@ -32,12 +32,12 @@
   // Start shaking and morphing into a ball after fluid fill
   setTimeout(() => {
     blast.style.animation = "morphToBall 3s ease-in-out forwards, shake 1s infinite ease-in-out";
-  }, 5000); // After fluid fill completes
+  }, 6000); // After fluid fill completes
 
   // Trigger explosion effect
   setTimeout(() => {
     blast.classList.add("blast-away");
-  }, 7000); // After morphing completes
+  }, 3000); // After morphing completes
 
   // Reveal homepage
   setTimeout(() => {
