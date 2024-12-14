@@ -1,17 +1,17 @@
-//"use strict";
+"use strict";
 
 // Page Loading Screen
 //document.addEventListener("DOMContentLoaded", function () {
-  //const loader = document.createElement("div");
- // loader.classList.add("loading-screen");
- // loader.innerHTML = `
-  //  <div class="loader">
+//  const loader = document.createElement("div");
+// loader.classList.add("loading-screen");
+//  loader.innerHTML = `
+//   <div class="loader">
+//    <span class="dot"></span>
+    //  <span class="dot"></span>
   //    <span class="dot"></span>
-   //   <span class="dot"></span>
-  //    <span class="dot"></span>
- //   </div>
-//    <p>Loading your experience...</p>
- // `;
+  //  </div>
+ //   <p>Loading your experience...</p>
+  //`;
  // document.body.appendChild(loader);
 
  // setTimeout(() => {
@@ -21,10 +21,10 @@
 //});
 
 
-"use strict";
+//"use strict";
 
 // Preloading Animation
-/* document.addEventListener("DOMContentLoaded", function () {
+ document.addEventListener("DOMContentLoaded", function () {
   const preloader = document.querySelector(".preloader");
   const blast = document.querySelector(".blast");
   const content = document.querySelector(".content");
@@ -85,18 +85,7 @@ document.addEventListener("DOMContentLoaded", () => {
     retina_detect: true,
   });
 
-  // Morph letters into a ball after text animation
-  setTimeout(() => {
-    ball.style.animation = "morphToBall 5s ease-in-out forwards";
-  }, 8000);
-
-  // Trigger Particle.js explosion
-  setTimeout(() => {
-    ball.classList.add("blast-away");
-    const particlesContainer = document.querySelector("#particles-js");
-    particlesContainer.style.opacity = 1;
-    setTimeout(() => (particlesContainer.style.opacity = 0), 1000); // Fade out particles
-  }, 13000);
+  
 
   // Reveal content
   setTimeout(() => {
@@ -104,10 +93,10 @@ document.addEventListener("DOMContentLoaded", () => {
     content.classList.add("show");
   }, 15000);
 });
-          */                
+                 
 
 
-document.addEventListener("DOMContentLoaded", () => {
+/* document.addEventListener("DOMContentLoaded", () => {
   const preloader = document.querySelector(".preloader");
   const ball = document.querySelector(".ball");
   const content = document.querySelector(".content");
@@ -164,7 +153,7 @@ document.addEventListener("DOMContentLoaded", () => {
     preloader.style.display = "none";
     content.classList.add("show");
   }, 11000);
-});
+});*/
                           
 
 
