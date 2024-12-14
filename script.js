@@ -1,25 +1,53 @@
-"use strict";
+//"use strict";
 
 // Page Loading Screen
-document.addEventListener("DOMContentLoaded", function () {
-  const loader = document.createElement("div");
-  loader.classList.add("loading-screen");
-  loader.innerHTML = `
-    <div class="loader">
-      <span class="dot"></span>
-      <span class="dot"></span>
-      <span class="dot"></span>
-    </div>
-    <p>Loading your experience...</p>
-  `;
-  document.body.appendChild(loader);
+//document.addEventListener("DOMContentLoaded", function () {
+  //const loader = document.createElement("div");
+ // loader.classList.add("loading-screen");
+ // loader.innerHTML = `
+  //  <div class="loader">
+  //    <span class="dot"></span>
+   //   <span class="dot"></span>
+  //    <span class="dot"></span>
+ //   </div>
+//    <p>Loading your experience...</p>
+ // `;
+ // document.body.appendChild(loader);
 
+ // setTimeout(() => {
+  //  loader.classList.add("hide");
+//    setTimeout(() => loader.remove(), 1000); // Ensure it's fully removed
+ // }, 3000); // 3-second loading time
+//});
+
+
+"use strict";
+
+// Preloading Animation
+document.addEventListener("DOMContentLoaded", function () {
+  const preloader = document.querySelector(".preloader");
+  const blast = document.querySelector(".blast");
+  const content = document.querySelector(".content");
+
+  // Start shaking and morphing into a ball after fluid fill
   setTimeout(() => {
-    loader.classList.add("hide");
-    setTimeout(() => loader.remove(), 1000); // Ensure it's fully removed
-  }, 3000); // 3-second loading time
+    blast.style.animation = "morphToBall 3s ease-in-out forwards, shake 1s infinite ease-in-out";
+  }, 6000); // After fluid fill completes
+
+  // Trigger explosion effect
+  setTimeout(() => {
+    blast.classList.add("blast-away");
+  }, 9000); // After morphing completes
+
+  // Reveal homepage
+  setTimeout(() => {
+    preloader.style.display = "none";
+    content.classList.add("show");
+  }, 10000); // After explosion effect
 });
 
+
+ 
 // Sidebar Toggle
 const sidebar = document.querySelector("[data-sidebar]");
 const sidebarBtn = document.querySelector("[data-sidebar-btn]");
