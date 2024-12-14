@@ -128,10 +128,6 @@ scrollTopButton.addEventListener("click", () => {
   window.scrollTo({ top: 0, behavior: "smooth" });
 });
 
-window.addEventListener("scroll", () => {
-  if (window.scrollY > 300) {
-    scrollTopButton.classList.add("visible");
-  } else {
-    scrollTopButton.classList.remove("visible");
-  }
-});
+// Keep the button visible always
+scrollTopButton.classList.add("visible");
+                        
