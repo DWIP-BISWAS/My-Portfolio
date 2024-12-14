@@ -45,7 +45,7 @@
     content.classList.add("show");
   }, 10000); // After explosion effect
 });
-*/
+*
 document.addEventListener("DOMContentLoaded", () => {
   const preloader = document.querySelector(".preloader");
   const ball = document.querySelector(".ball");
@@ -104,8 +104,70 @@ document.addEventListener("DOMContentLoaded", () => {
     content.classList.add("show");
   }, 15000);
 });
+          */                
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  const preloader = document.querySelector(".preloader");
+  const ball = document.querySelector(".ball");
+  const content = document.querySelector(".content");
+
+  // Initialize Particle.js for the explosion effect
+  particlesJS("particles-js", {
+    particles: {
+      number: {
+        value: 300,
+      },
+      color: {
+        value: ["#ffffff", "#ffcc00", "#ff6600", "#00ccff"],
+      },
+      shape: {
+        type: ["circle", "edge", "polygon"],
+      },
+      opacity: {
+        value: 1,
+      },
+      size: {
+        value: 3,
+      },
+      move: {
+        enable: true,
+        speed: 8,
+      },
+    },
+    interactivity: {
+      detect_on: "canvas",
+      events: {
+        onclick: {
+          enable: false,
+        },
+      },
+    },
+    retina_detect: true,
+  });
+
+  // Morph letters into a ball after text animation
+  setTimeout(() => {
+    ball.style.animation = "morphToBall 3s ease-in-out forwards";
+  }, 6000);
+
+  // Trigger Particle.js explosion
+  setTimeout(() => {
+    ball.classList.add("blast-away");
+    const particlesContainer = document.querySelector("#particles-js");
+    particlesContainer.style.opacity = 1;
+    setTimeout(() => (particlesContainer.style.opacity = 0), 1000); // Fade out particles
+  }, 9000);
+
+  // Reveal content
+  setTimeout(() => {
+    preloader.style.display = "none";
+    content.classList.add("show");
+  }, 11000);
+});
                           
- 
+
+
 // Sidebar Toggle
 const sidebar = document.querySelector("[data-sidebar]");
 const sidebarBtn = document.querySelector("[data-sidebar-btn]");
