@@ -1916,7 +1916,7 @@ textarea.form-input::-webkit-resizer { display: none; }
     transform: translateY(-1rem);
   }
 }*/
-/* Preloader Styling */
+/* Preloader Styling 
 .preloader {
   position: fixed;
   top: 0;
@@ -1947,7 +1947,7 @@ textarea.form-input::-webkit-resizer { display: none; }
   letter-spacing: 10px;
 }
 
-/* Fluid Fill Animation */
+/* Fluid Fill Animation *
 .hollow-text {
   stroke-dasharray: 500px;
   stroke-dashoffset: 500px;
@@ -1972,7 +1972,7 @@ textarea.form-input::-webkit-resizer { display: none; }
   }
 }
 
-/* Shaking Effect */
+/* Shaking Effect *
 @keyframes shake {
   0%, 100% {
     transform: translate(0, 0);
@@ -1988,7 +1988,7 @@ textarea.form-input::-webkit-resizer { display: none; }
   }
 }
 
-/* Irregular Ball Transformation */
+/* Irregular Ball Transformation *
 .blast {
   position: absolute;
   width: 150px;
@@ -2011,7 +2011,7 @@ textarea.form-input::-webkit-resizer { display: none; }
   }
 }
 
-/* Explosion Effect */
+/* Explosion Effect 
 @keyframes blastAway {
   0% {
     transform: scale(1);
@@ -2027,7 +2027,7 @@ textarea.form-input::-webkit-resizer { display: none; }
   animation: blastAway 1s forwards;
 }
 
-/* Reveal Content */
+/* Reveal Content 
 .content {
   opacity: 0;
   transition: opacity 1s ease;
@@ -2035,8 +2035,146 @@ textarea.form-input::-webkit-resizer { display: none; }
 
 .content.show {
   opacity: 1;
-	  }
-	  
+}	 
+
+
+/* Space-Themed Background */
+#particles-js {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+/* SVG Hollow Text Styling */
+.hollow-text {
+  fill: none;
+  stroke: var(--light-gray);
+  stroke-width: 2px;
+  font-size: 120px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 10px;
+  opacity: 0;
+  animation: revealText 5s forwards, strokeFill 3s 2s forwards, fillLetters 2s 5s forwards;
+}
+
+/* Text Reveal Animation */
+@keyframes revealText {
+  0% {
+    opacity: 0;
+    transform: scale(0.9) rotateX(90deg);
+  }
+  25% {
+    opacity: 0.3;
+    transform: scale(1) rotateX(45deg);
+  }
+  50% {
+    opacity: 0.7;
+    transform: scale(1) rotateX(0deg);
+  }
+  75% {
+    opacity: 0.9;
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Stroke Animation */
+@keyframes strokeFill {
+  0% {
+    stroke-dasharray: 500px;
+    stroke-dashoffset: 500px;
+  }
+  100% {
+    stroke-dashoffset: 0px;
+  }
+}
+
+/* Fill Letters Animation */
+@keyframes fillLetters {
+  0% {
+    fill: none;
+  }
+  100% {
+    fill: var(--white-2);
+  }
+}
+
+/* Morphing Ball Animation */
+.ball {
+  position: absolute;
+  width: 0;
+  height: 0;
+  background: var(--white-2);
+  border-radius: 50%;
+  opacity: 0;
+  transform-origin: center;
+  animation: morphToBall 5s 8s ease-in-out forwards;
+}
+
+@keyframes morphToBall {
+  0% {
+    width: 0;
+    height: 0;
+  }
+  10% {
+    width: 50px;
+    height: 50px;
+    opacity: 1;
+  }
+  30% {
+    width: 100px;
+    height: 100px;
+    clip-path: polygon(20% 30%, 80% 10%, 90% 80%, 10% 90%);
+  }
+  50% {
+    width: 120px;
+    height: 120px;
+    clip-path: circle(40%);
+  }
+  70% {
+    width: 150px;
+    height: 150px;
+    clip-path: circle(50%);
+  }
+  100% {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+  }
+}
+
+/* Explosion Animation */
+@keyframes blastAway {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(5);
+    opacity: 0;
+  }
+}
+
+.ball.blast-away {
+  animation: blastAway 2s forwards;
+}
+
+/* Content Reveal */
+.content {
+  opacity: 0;
+  transition: opacity 2s ease;
+}
+
+.content.show {
+  opacity: 1;
+}
+
 
 /* Scroll to Top Button */
 .scroll-top-button {
