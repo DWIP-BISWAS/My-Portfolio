@@ -37,7 +37,7 @@
   -->
 
     <main>
-      <div class="preloader">
+     <!-- <div class="preloader">
   <svg class="preloader-svg" viewBox="0 0 500 150" xmlns="http://www.w3.org/2000/svg">
     <text x="50%" y="50%" dy=".35em" text-anchor="middle" class="hollow-text">
       DWIP
@@ -45,7 +45,19 @@
   </svg>
   <div class="blast"></div>
 </div>
-<div class="content">
+<div class="content"> -->
+        <div class="preloader">
+    <div id="particles-js"></div> <!-- Particle.js container -->
+    <svg class="preloader-svg" viewBox="0 0 500 150" xmlns="http://www.w3.org/2000/svg">
+      <text x="50%" y="50%" dy=".35em" text-anchor="middle" class="hollow-text">
+        DWIP
+      </text>
+    </svg>
+    <div class="ball"></div>
+  </div>
+  <div class="content">
+    <!-- Your homepage content goes here -->
+  
 
       <aside class="sidebar" data-sidebar>
         <div class="sidebar-info">
@@ -1322,6 +1334,8 @@
     <!--
     - custom js link
   -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+      
     <script src="script.js"></script>
 
     <!--
@@ -1334,7 +1348,9 @@
     <script
       nomodule
       src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
-    ></script>
+    >
+      
+    </script>
   </div>
   </body>
 </html>
