@@ -1,175 +1,117 @@
-import React, { useState } from "react";
-import "./style.css";
+"use strict";
 
-const App = () => {
-  // State variables
-  const [sidebarActive, setSidebarActive] = useState(false);
-  const [modalActive, setModalActive] = useState(false);
-  const [modalContent, setModalContent] = useState({ img: "", title: "", text: "" });
-  const [selectActive, setSelectActive] = useState(false);
-  const [selectedValue, setSelectedValue] = useState("All");
-  const [activePage, setActivePage] = useState("Home");
-  const [formValid, setFormValid] = useState(false);
+// Page Loading Screen
+document.addEventListener("DOMContentLoaded", function () {
+  const loader = document.createElement("div");
+  loader.classList.add("loading-screen");
+  loader.innerHTML = `
+    <div class="loader">
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+    </div>
+    <p>Loading your experience...</p>
+  `;
+  document.body.appendChild(loader);
 
-  // Sidebar toggle
-  const toggleSidebar = () => {
-    setSidebarActive(!sidebarActive);
-  };
+  setTimeout(() => {
+    loader.classList.add("hide");
+    setTimeout(() => loader.remove(), 1000); // Ensure it's fully removed
+  }, 3000); // 3-second loading time
+});
 
-  // Modal handling
-  const openModal = (img, title, text) => {
-    setModalContent({ img, title, text });
-    setModalActive(true);
-  };
+// Sidebar Toggle
+const sidebar = document.querySelector("[data-sidebar]");
+const sidebarBtn = document.querySelector("[data-sidebar-btn]");
 
-  const closeModal = () => {
-    setModalActive(false);
-  };
+sidebarBtn.addEventListener("click", () => {
+  sidebar.classList.toggle("active");
+});
 
-  // Select dropdown handling
-  const toggleSelect = () => {
-    setSelectActive(!selectActive);
-  };
+// Page Navigation
+const navigationLinks = document.querySelectorAll("[data-nav-link]");
+const pages = document.querySelectorAll("[data-page]");
 
-  const handleSelect = (value) => {
-    setSelectedValue(value);
-    setSelectActive(false);
-    filterFunc(value.toLowerCase());
-  };
+navigationLinks.forEach((link, index) => {
+  link.addEventListener("click", () => {
+    navigationLinks.forEach((nav) => nav.classList.remove("active"));
+    pages.forEach((page) => page.classList.remove("active"));
 
-  // Page navigation handling
-  const navigateTo = (page) => {
-    setActivePage(page);
-    window.scrollTo(0, 0);
-  };
+    link.classList.add("active");
+    pages[index].classList.add("active");
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+});
 
-  // Form validation
-  const handleFormInput = (e) => {
-    const form = e.target.closest("form");
-    setFormValid(form.checkValidity());
-  };
+// Modal Functionality (for testimonials)
+const testimonialsItems = document.querySelectorAll("[data-testimonials-item]");
+const modalContainer = document.querySelector("[data-modal-container]");
+const modalCloseBtn = document.querySelector("[data-modal-close-btn]");
+const overlay = document.querySelector("[data-overlay]");
+const modalImg = document.querySelector("[data-modal-img]");
+const modalTitle = document.querySelector("[data-modal-title]");
+const modalText = document.querySelector("[data-modal-text]");
 
-  // Filtering logic
-  const filterFunc = (selectedValue) => {
-    const filterItems = document.querySelectorAll("[data-filter-item]");
-    filterItems.forEach((item) => {
-      if (selectedValue === "all" || item.dataset.category === selectedValue) {
-        item.classList.add("active");
+testimonialsItems.forEach((item) => {
+  item.addEventListener("click", () => {
+    modalImg.src = item.querySelector("[data-testimonials-avatar]").src;
+    modalTitle.textContent = item.querySelector("[data-testimonials-title]").textContent;
+    modalText.textContent = item.querySelector("[data-testimonials-text]").textContent;
+
+    modalContainer.classList.add("active");
+    overlay.classList.add("active");
+  });
+});
+
+modalCloseBtn.addEventListener("click", closeModal);
+overlay.addEventListener("click", closeModal);
+
+function closeModal() {
+  modalContainer.classList.remove("active");
+  overlay.classList.remove("active");
+}
+
+// Form Validation
+const form = document.querySelector("[data-form]");
+const formInputs = document.querySelectorAll("[data-form-input]");
+const formBtn = document.querySelector("[data-form-btn]");
+
+formInputs.forEach((input) => {
+  input.addEventListener("input", () => {
+    if (form.checkValidity()) {
+      formBtn.removeAttribute("disabled");
+    } else {
+      formBtn.setAttribute("disabled", "");
+    }
+  });
+});
+
+// Smooth Animations for Content Appearance
+const observer = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("show");
       } else {
-        item.classList.remove("active");
+        entry.target.classList.remove("show");
       }
     });
-  };
+  },
+  { threshold: 0.2 }
+);
 
-  return (
-    <div>
-      {/* Sidebar */}
-      <aside className={`sidebar ${sidebarActive ? "active" : ""}`} data-sidebar>
-        <button onClick={toggleSidebar} data-sidebar-btn>
-          ☰
-        </button>
-        <nav>
-          <ul>
-            <li
-              className={activePage === "Home" ? "active" : ""}
-              onClick={() => navigateTo("Home")}
-              data-nav-link
-            >
-              Home
-            </li>
-            <li
-              className={activePage === "About" ? "active" : ""}
-              onClick={() => navigateTo("About")}
-              data-nav-link
-            >
-              About
-            </li>
-          </ul>
-        </nav>
-      </aside>
+document.querySelectorAll(".content-card, .service-item, .testimonials-item").forEach((item) => {
+  observer.observe(item);
+});
 
-      {/* Main Content */}
-      <main>
-        {/* Testimonials Section */}
-        <section>
-          <h2>Testimonials</h2>
-          <div className="testimonials-container">
-            <div
-              className="testimonials-item"
-              data-testimonials-item
-              onClick={() => openModal("image.jpg", "John Doe", "Great service!")}
-            >
-              <img data-testimonials-avatar src="image.jpg" alt="Avatar" />
-              <h3 data-testimonials-title>John Doe</h3>
-              <p data-testimonials-text>Great service!</p>
-            </div>
-          </div>
-        </section>
+// Responsive Adjustments for Low-Memory Devices
+const handleResize = () => {
+  const isMobile = window.innerWidth <= 768;
 
-        {/* Modal */}
-        {modalActive && (
-          <div className={`modal-container ${modalActive ? "active" : ""}`} data-modal-container>
-            <div className="overlay" data-overlay onClick={closeModal}></div>
-            <div className="modal">
-              <img src={modalContent.img} alt="Avatar" data-modal-img />
-              <h3 data-modal-title>{modalContent.title}</h3>
-              <p data-modal-text>{modalContent.text}</p>
-              <button onClick={closeModal} data-modal-close-btn>
-                Close
-              </button>
-            </div>
-          </div>
-        )}
-
-        {/* Custom Select */}
-        <section>
-          <div className={`custom-select ${selectActive ? "active" : ""}`} data-select onClick={toggleSelect}>
-            <span data-selecct-value>{selectedValue}</span>
-          </div>
-          {selectActive && (
-            <div className="select-items">
-              <div onClick={() => handleSelect("All")} data-select-item>
-                All
-              </div>
-              <div onClick={() => handleSelect("Category1")} data-select-item>
-                Category1
-              </div>
-            </div>
-          )}
-        </section>
-
-        {/* Contact Form */}
-        <section>
-          <form data-form>
-            <input
-              type="text"
-              placeholder="Name"
-              data-form-input
-              onInput={handleFormInput}
-              required
-            />
-            <input
-              type="email"
-              placeholder="Email"
-              data-form-input
-              onInput={handleFormInput}
-              required
-            />
-            <textarea
-              placeholder="Message"
-              data-form-input
-              onInput={handleFormInput}
-              required
-            ></textarea>
-            <button type="submit" data-form-btn disabled={!formValid}>
-              Submit
-            </button>
-          </form>
-        </section>
-      </main>
-    </div>
-  );
+  if (isMobile) {
+    sidebar.classList.remove("active"); // Ensure sidebar is closed on small screens
+  }
 };
 
-export default App;
-    
+window.addEventListener("resize", handleResize);
+handleResize(); // Initialize on page load
