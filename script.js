@@ -117,4 +117,43 @@ window.addEventListener("resize", handleResize);
 handleResize(); // Initialize on page load
 
 
-// testimonials variables
+// Scroll to Top Button
+const scrollTopButton = document.createElement("button");
+scrollTopButton.classList.add("scroll-top-button");
+scrollTopButton.innerHTML = "↑";
+
+document.body.appendChild(scrollTopButton);
+
+scrollTopButton.addEventListener("click", () => {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+});
+
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 300) {
+    scrollTopButton.classList.add("visible");
+  } else {
+    scrollTopButton.classList.remove("visible");
+  }
+});
+// Input Focus Animation
+const formInputs = document.querySelectorAll("[data-form-input]");
+
+formInputs.forEach((input) => {
+  input.addEventListener("focus", () => {
+    input.classList.add("input-focused");
+  });
+
+  input.addEventListener("blur", () => {
+    input.classList.remove("input-focused");
+  });
+});
+// Smooth Scroll for Navigation Links
+const navigationLinks = document.querySelectorAll("[data-nav-link]");
+navigationLinks.forEach((link) => {
+  link.addEventListener("click", (e) => {
+    e.preventDefault();
+    const targetSection = document.querySelector(`#${link.getAttribute('data-page')}`);
+    
+    targetSection.scrollIntoView({ behavior: "smooth", block: "start" });
+  });
+});
