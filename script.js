@@ -32,18 +32,18 @@
   // Start shaking and morphing into a ball after fluid fill
   setTimeout(() => {
     blast.style.animation = "morphToBall 3s ease-in-out forwards, shake 1s infinite ease-in-out";
-  }, 4000); // After fluid fill completes
+  }, 5000); // After fluid fill completes
 
   // Trigger explosion effect
   setTimeout(() => {
     blast.classList.add("blast-away");
-  }, 6000); // After morphing completes
+  }, 7000); // After morphing completes
 
   // Reveal homepage
   setTimeout(() => {
     preloader.style.display = "none";
     content.classList.add("show");
-  }, 7000); // After explosion effect
+  }, 3000); // After explosion effect
 });
 /*
 document.addEventListener("DOMContentLoaded", () => {
