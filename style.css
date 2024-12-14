@@ -1955,25 +1955,6 @@ textarea.form-input::-webkit-resizer { display: none; }
   animation: strokeFill 3s ease forwards, fillLetters 3s 3s ease forwards;
 }
 
-@keyframes strokeFill {
-  0% {
-    stroke-dashoffset: 500px;
-  }
-  100% {
-    stroke-dashoffset: 0px;
-  }
-}
-
-@keyframes fillLetters {
-  0% {
-    fill: none;
-  }
-  100% {
-    fill: var(--white-2);
-  }
-}
-
-
 /* Reveal Content */
 .content {
   opacity: 0;
@@ -1985,7 +1966,7 @@ textarea.form-input::-webkit-resizer { display: none; }
 }	 
 
 
-/* Space-Themed Background */
+/* Space-Themed Background *
 #particles-js {
   position: absolute;
   top: 0;
@@ -2165,13 +2146,13 @@ textarea.form-input::-webkit-resizer { display: none; }
     fill: none;
   }
   50% {
-    fill: #00ccff; /* Word 1 fills */
+    fill: #00ccff; /* Word 1 fills *
   }
   75% {
-    fill: #ffffff; /* Word 2 fills */
+    fill: #ffffff; * Word 2 fills 
   }
   100% {
-    fill: #ffffff; /* Final fill */
+    fill: #ffffff; /* Final fill *
   }
 }
 
