@@ -90,8 +90,8 @@
    * transition
    */
 
-  --transition-1: 0.25s ease;
-  --transition-2: 0.5s ease-in-out;
+  --transition-1: 0.3s ease;
+  --transition-2: 0.6s ease-in-out;
 
 }
 
@@ -1915,17 +1915,4 @@ textarea.form-input::-webkit-resizer { display: none; }
   50% {
     transform: translateY(-1rem);
   }
-}
-
-
-/* Fade-in effect for sections */
-section {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
-}
-
-section.show {
-  opacity: 1;
-  transform: translateY(0);
 }
