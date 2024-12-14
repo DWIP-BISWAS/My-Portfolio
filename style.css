@@ -1916,3 +1916,73 @@ textarea.form-input::-webkit-resizer { display: none; }
     transform: translateY(-1rem);
   }
 }
+
+
+/* Fade-in effect for sections */
+section {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+section.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+/* Glowing effect for buttons */
+.glowing-button {
+  position: relative;
+  overflow: hidden;
+  border-radius: 50px;
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  background: var(--orange-yellow-crayola);
+  color: var(--smoky-black);
+  cursor: pointer;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  transition: background 0.3s, box-shadow 0.3s;
+}
+
+.glowing-button::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: rgba(255, 255, 255, 0.1);
+  animation: glowing 1.5s infinite ease-in-out;
+  border-radius: 50%;
+  z-index: -1;
+}
+
+.glowing-button:hover {
+  background: var(--orange-yellow-crayola);
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.5);
+}
+
+@keyframes glowing {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.5);
+    background: rgba(255, 255, 255, 0.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+	}
+
+/* Ensure these sections are visible and animated when scrolled into view */
+.show {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.6s ease, transform 0.6s ease;		    }
+  opacity: 0;
+  transform: translateY(20px); /* Start from below the screen */
+	}
+	  
