@@ -91,7 +91,7 @@ document.addEventListener("DOMContentLoaded", () => {
   setTimeout(() => {
     preloader.style.display = "none";
     content.classList.add("show");
-  }, 15000);
+  }, 7000);
 });
                  
 
