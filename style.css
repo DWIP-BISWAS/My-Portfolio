@@ -1916,19 +1916,3 @@ textarea.form-input::-webkit-resizer { display: none; }
     transform: translateY(-1rem);
   }
 }
-
-/* Content Appear Animation */
-/* Ensure these sections are visible and animated when scrolled into view */
-.show {
-  opacity: 1;
-  transform: translateY(0);
-  transition: opacity 0.6s ease, transform 0.6s ease;
-}
-
-.content-card,
-.service-item,
-.testimonials-item,
-.skills-item {
-  opacity: 0;
-  transform: translateY(20px); /* Start from below the screen */
-}
