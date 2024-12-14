@@ -1918,6 +1918,7 @@ textarea.form-input::-webkit-resizer { display: none; }
 }
 
 /* Content Appear Animation */
+/* Ensure these sections are visible and animated when scrolled into view */
 .show {
   opacity: 1;
   transform: translateY(0);
@@ -1926,8 +1927,8 @@ textarea.form-input::-webkit-resizer { display: none; }
 
 .content-card,
 .service-item,
-.testimonials-item {
+.testimonials-item,
+.skills-item {
   opacity: 0;
-  transform: translateY(20px);
-	  }
-	  
+  transform: translateY(20px); /* Start from below the screen */
+}
