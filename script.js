@@ -268,3 +268,194 @@ scrollTopButton.addEventListener("click", () => {
 // Keep the button visible always
 scrollTopButton.classList.add("visible");
                         
+// Chatbot Container
+const chatbotContainer = document.createElement('div');
+chatbotContainer.style.position = 'fixed';
+chatbotContainer.style.bottom = '20px';
+chatbotContainer.style.right = '20px';
+chatbotContainer.style.width = '300px';
+chatbotContainer.style.height = '400px';
+chatbotContainer.style.backgroundColor = '#f0f0f0';
+chatbotContainer.style.borderRadius = '10px';
+chatbotContainer.style.boxShadow = '0 4px 8px rgba(0, 0, 0, 0.1)';
+chatbotContainer.style.display = 'flex';
+chatbotContainer.style.flexDirection = 'column';
+chatbotContainer.innerHTML = `
+  <div style="padding: 10px; background: #333; color: #fff; text-align: center;">AI Chatbot</div>
+  <div id="chatContent" style="padding: 10px; flex: 1; overflow-y: auto; background-color: #fff;">
+    <div>Bot: Hi! How can I help you today?</div>
+    <div style="margin-top: 10px;">
+      <button class="chat-option" data-value="About">Tell me about Dwip</button>
+      <button class="chat-option" data-value="Portfolio">Show me your portfolio</button>
+      <button class="chat-option" data-value="Contact">Can't find? Contact Dwip</button>
+    </div>
+  </div>
+  <input type="text" id="chatInput" style="border: 1px solid #ddd; padding: 10px; margin: 10px;" placeholder="Type your message here">
+`;
+
+document.body.appendChild(chatbotContainer);
+
+// Chatbot Logic
+document.querySelectorAll('.chat-option').forEach((button) => {
+  button.addEventListener('click', (e) => {
+    const userMessage = e.target.dataset.value;
+    addMessageToChat(`You: ${userMessage}`);
+    handleBotReply(userMessage);
+  });
+});
+
+document.getElementById('chatInput').addEventListener('keypress', (e) => {
+  if (e.key === 'Enter') {
+    const userMessage = e.target.value;
+    addMessageToChat(`You: ${userMessage}`);
+    handleBotReply(userMessage);
+    e.target.value = '';
+  }
+});
+
+// Helper Function to Add Messages
+function addMessageToChat(message) {
+  const chatContent = document.getElementById('chatContent');
+  const newMessage = document.createElement('div');
+  newMessage.textContent = message;
+  chatContent.appendChild(newMessage);
+  chatContent.scrollTop = chatContent.scrollHeight;
+}
+
+// Bot Responses
+function handleBotReply(userMessage) {
+  let botReply;
+  if (userMessage === 'About') {
+    botReply = 'I am Dwip Biswas, a frontend developer passionate about creating digital experiences!';
+  } else if (userMessage === 'Portfolio') {
+    botReply = 'You can view my portfolio in the portfolio section of this site.';
+  } else if (userMessage === 'Contact') {
+    botReply = `
+      Please fill out your contact details below:
+      <div style="margin-top: 10px;">
+        <input type="text" id="userName" placeholder="Your Name" style="margin-bottom: 5px; width: 95%; padding: 5px;">
+        <input type="email" id="userEmail" placeholder="Your Email" style="margin-bottom: 5px; width: 95%; padding: 5px;">
+        <textarea id="userMessage" placeholder="Your Message" style="width: 95%; padding: 5px;"></textarea>
+        <button id="sendMessage">Send Message</button>
+      </div>
+    `;
+  } else {
+    botReply = "Sorry, I didn't understand that. Please select an option.";
+  }
+  addMessageToChat(`Bot: ${botReply}`);
+
+  // Handle Contact Form Submission
+  if (userMessage === 'Contact') {
+    document.getElementById('sendMessage').addEventListener('click', sendEmail);
+  }
+}
+
+// Function to Send Email
+function sendEmail() {
+  const name = document.getElementById('userName').value;
+  const email = document.getElementById('userEmail').value;
+  const message = document.getElementById('userMessage').value;
+
+  if (!name || !email || !message) {
+    alert('Please fill in all fields.');
+    return;
+  }
+
+  fetch('https://formsubmit.co/ajax/dwipbiswas22972@gmail.com', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      name: name,
+      email: email,
+      message: message,
+    }),
+  })
+    .then((response) => {
+      if (response.ok) {
+        alert('Your message has been sent successfully!');
+        document.getElementById('userName').value = '';
+        document.getElementById('userEmail').value = '';
+        document.getElementById('userMessage').value = '';
+      } else {
+        alert('Failed to send message. Please try again later.');
+      }
+    })
+    .catch(() => {
+      alert('Failed to send message. Please try again later.');
+    });
+          }
+
+
+
+// Hover Animation using GSAP
+document.querySelectorAll('.service-item').forEach((item) => {
+  item.addEventListener('mouseenter', () => {
+    gsap.to(item, { scale: 1.1, duration: 0.3 });
+  });
+  item.addEventListener('mouseleave', () => {
+    gsap.to(item, { scale: 1, duration: 0.3 });
+  });
+});
+      // Konami Code Easter Egg
+const konamiCode = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65]; // ↑↑↓↓←→←→BA
+let konamiIndex = 0;
+
+document.addEventListener('keydown', (e) => {
+  if (e.keyCode === konamiCode[konamiIndex]) {
+    konamiIndex++;
+    if (konamiIndex === konamiCode.length) {
+      alert('Easter Egg Activated!');
+      konamiIndex = 0;
+    }
+  } else {
+    konamiIndex = 0;
+  }
+});
+// Custom Cursor
+const cursor = document.createElement('div');
+cursor.style.width = cursor.style.height = '20px';
+cursor.style.border = '2px solid #000';
+cursor.style.borderRadius = '50%';
+cursor.style.position = 'fixed';
+cursor.style.pointerEvents = 'none';
+cursor.style.zIndex = '1000';
+cursor.style.transition = 'transform 0.1s ease-out';
+document.body.appendChild(cursor);
+
+document.addEventListener('mousemove', (e) => {
+  cursor.style.top = `${e.clientY}px`;
+  cursor.style.left = `${e.clientX}px`;
+});
+
+// Hover Effect
+document.querySelectorAll('a, button').forEach((element) => {
+  element.addEventListener('mouseover', () => {
+    cursor.style.transform = 'scale(1.5)';
+    cursor.style.backgroundColor = '#000';
+  });
+  element.addEventListener('mouseleave', () => {
+    cursor.style.transform = 'scale(1)';
+    cursor.style.backgroundColor = 'transparent';
+  });
+});
+      // Add GSAP and ScrollTrigger
+gsap.registerPlugin(ScrollTrigger);
+
+gsap.from('.main-content', {
+  opacity: 0,
+  y: 50,
+  duration: 1,
+  scrollTrigger: {
+    trigger: '.main-content',
+    start: 'top 80%',
+    toggleActions: 'play none none none',
+  },
+});
+
+// Smooth Scrolling
+gsap.to(window, {
+  scrollTo: { y: 'max', autoKill: false },
+  duration: 2,
+  ease: 'power4.inOut',
+});
+    
