@@ -509,4 +509,5 @@ function type() {
   setTimeout(type, isDeleting ? 50 : 150);
 }
 type();
+*/
     
