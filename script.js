@@ -439,7 +439,7 @@ document.querySelectorAll('a, button').forEach((element) => {
     cursor.style.transform = 'scale(1)';
     cursor.style.backgroundColor = 'transparent';
   });
-});*/
+});
       // Add GSAP and ScrollTrigger
 gsap.registerPlugin(ScrollTrigger);
 
