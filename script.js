@@ -269,6 +269,7 @@ scrollTopButton.addEventListener("click", () => {
 scrollTopButton.classList.add("visible");
                         
 // Chatbot Container
+/*
 const chatbotContainer = document.createElement('div');
 chatbotContainer.style.position = 'fixed';
 chatbotContainer.style.bottom = '20px';
@@ -395,7 +396,7 @@ document.querySelectorAll('.service-item').forEach((item) => {
   item.addEventListener('mouseleave', () => {
     gsap.to(item, { scale: 1, duration: 0.3 });
   });
-});
+});*/
       // Konami Code Easter Egg
 const konamiCode = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65]; // ↑↑↓↓←→←→BA
 let konamiIndex = 0;
@@ -412,6 +413,7 @@ document.addEventListener('keydown', (e) => {
   }
 });
 // Custom Cursor
+/*
 const cursor = document.createElement('div');
 cursor.style.width = cursor.style.height = '20px';
 cursor.style.border = '2px solid #000';
@@ -437,7 +439,7 @@ document.querySelectorAll('a, button').forEach((element) => {
     cursor.style.transform = 'scale(1)';
     cursor.style.backgroundColor = 'transparent';
   });
-});
+});*/
       // Add GSAP and ScrollTrigger
 gsap.registerPlugin(ScrollTrigger);
 
@@ -458,4 +460,53 @@ gsap.to(window, {
   duration: 2,
   ease: 'power4.inOut',
 });
+    
+// Particle Trail
+const canvas = document.createElement("canvas");
+canvas.id = "particle-trail";
+document.body.appendChild(canvas);
+
+const ctx = canvas.getContext("2d");
+let particles = [];
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+window.addEventListener("mousemove", (e) => {
+  particles.push({ x: e.clientX, y: e.clientY, size: 5 });
+});
+
+function drawParticles() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  particles.forEach((p, i) => {
+    ctx.beginPath();
+    ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+    ctx.fillStyle = "rgba(255, 255, 255, 0.7)";
+    ctx.fill();
+    p.size -= 0.1;
+    if (p.size <= 0) particles.splice(i, 1);
+  });
+  requestAnimationFrame(drawParticles);
+}
+drawParticles();
+      const phrases = ["Frontend Developer", "Web Designer", "Creative Coder"];
+let i = 0, j = 0, isDeleting = false;
+
+function type() {
+  const element = document.querySelector(".dynamic-text");
+  const currentPhrase = phrases[i];
+  element.textContent = isDeleting 
+    ? currentPhrase.substring(0, j--) 
+    : currentPhrase.substring(0, j++);
+
+  if (!isDeleting && j === currentPhrase.length) {
+    isDeleting = true;
+    setTimeout(type, 1000);
+  } else if (isDeleting && j === 0) {
+    isDeleting = false;
+    i = (i + 1) % phrases.length;
+  }
+
+  setTimeout(type, isDeleting ? 50 : 150);
+}
+type();
     
