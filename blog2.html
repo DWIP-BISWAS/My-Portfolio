@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Get a Free GPU for AI Training 💀</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="A complete guide on how to get free Tesla T4, A100, and even H100 GPUs for AI training.">
+    <meta name="keywords" content="Free GPU, AI training, Google Colab, Kaggle, Paperspace, Tesla T4, A100, cloud GPU">
+    <meta name="author" content="Dwip Biswas">
+
+    <!-- Open Graph (For Social Sharing) -->
+    <meta property="og:title" content="How to Get a Free GPU for AI Training 💀">
+    <meta property="og:description" content="Get free Tesla T4, A100, and even H100 GPUs without paying a dime.">
+    <meta property="og:image" content="gpu-hack-thumbnail.jpg">
+    <meta property="og:url" content="https://dwippfolio.netlify.app/blog2.html">
+    <meta property="og:type" content="article">
+
+    <link rel="stylesheet" href="bstyle.css">
+</head>
+<body>
+
+    <header>
+        <h1>How to Get a Free GPU for AI Training 💀</h1>
+        <p><strong>Published on:</strong> March 8, 2025 | <strong>Category:</strong> AI, Free GPU</p>
+    </header>
+
+    <article>
+
+        <h2>🔥 The GPU Crisis: Why This Guide Exists</h2>
+        <p>GPUs are expensive as hell. AI devs are out here selling **kidneys for RTX 4090s**, while we’re out here **training models for FREE.**  
+        If you want a **Tesla T4, A100, or even an H100** without spending a dime, this guide is for you. 🚀</p>
+
+        <h2>🚀 1. Google Colab – The Free Pain-in-the-Ass GPU</h2>
+        <p>Google was feeling generous and gave us **Tesla T4s** for free. But then they said, **"nah, pay up,"** and started disconnecting us mid-training 💀.</p>
+
+        <p>✅ **What You Get:** Free Tesla T4 for a few hours  
+        ❌ **Downside:** Random disconnects, session limits, and Google watching your code 👀</p>
+
+        <h3>💡 How to Keep Colab Alive Longer?</h3>
+        <div class="code-container">
+            <pre><code class="language-python"># Stops Colab from disconnecting (sometimes works)
+from google.colab import output
+output.eval_js('new Promise(resolve => {setInterval(() => {document.querySelector("colab-toolbar-button").click()}, 60000)})')
+            </code></pre>
+            <button class="copy-btn">Copy Code</button>
+        </div>
+
+        <h2>🔥 2. Kaggle – Colab's Smarter Twin Brother</h2>
+        <p>Google owns **Kaggle**, and unlike Colab, they let you train models properly. **No random disconnects, longer sessions, and faster storage.**</p>
+
+        <h3>💡 How to Get an A100?</h3>
+        <p>1️⃣ Start a **new Kaggle Notebook**  
+        2️⃣ Go to **Settings > Accelerator**  
+        3️⃣ **Pray to the GPU gods** that you get an A100 💀</p>
+
+        <h2>💰 3. Paperspace – Free Tesla V100 (If You’re Lucky)</h2>
+        <p>Paperspace is like **Colab on steroids**. They **sometimes** give free GPUs, and if you catch them, you’re golden.</p>
+
+        <p>✅ **What You Get:** Tesla T4 / V100  
+        ❌ **Downside:** Waitlist for free GPUs, needs a sign-up</p>
+
+        <h2>👀 4. The Cloud Gaming Abuse Method 💀</h2>
+        <p>Ok, this one's cursed 💀. Cloud gaming platforms like **GeForce NOW, Stadia (RIP), and Shadow PC** have powerful GPUs for gaming.  
+        Some **smart devs figured out** how to run Python scripts inside these services. **If you know, you know.** 👀</p>
+
+        <h2>📢 Final Thoughts</h2>
+        <p>**Moral of the story:**  
+        If you’re broke but still wanna train AI models, **there are ways** to get free GPUs. **Just don’t abuse it too hard 💀.**</p>
+
+    </article>
+
+    <footer>
+        <p>🚀 Read more blogs on <a href="blog.html">my blog page</a></p>
+        <p>💀 Written by <strong>Dwip Biswas</strong></p>
+        <p><a href="index.html">← Back to Portfolio</a></p>
+    </footer>
+
+    <!-- JavaScript for Copy Code Button -->
+    <script>
+        document.querySelectorAll('.copy-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                const code = button.previousElementSibling.textContent;
+                navigator.clipboard.writeText(code);
+                button.textContent = "Copied!";
+                setTimeout(() => button.textContent = "Copy Code", 2000);
+            });
+        });
+    </script>
+
+</body>
+</html>
