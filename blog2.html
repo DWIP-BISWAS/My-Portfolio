@@ -39,6 +39,8 @@
         <br><strong>Downside:</strong> Random disconnects, session limits, and Google watching your code.</p>
 
         <h3>💡 How to Keep Colab Alive Longer?</h3>
+<button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+            
         <div class="code-container">
             <pre><code class="language-python">
 # Stops Colab from disconnecting (sometimes works)
@@ -49,7 +51,6 @@ output.eval_js('new Promise(resolve => {
     }, 60000)
 })')
             </code></pre>
-            <button class="copy-btn">Copy Code</button>
         </div>
 
         <h2>🔥 2. Kaggle – Colab's Smarter Twin Brother</h2>
