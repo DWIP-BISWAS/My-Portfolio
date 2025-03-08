@@ -1,0 +1,116 @@
+/* 🔥 RESET STYLES */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* 🔥 BODY STYLE */
+body {
+    background-color: #111;
+    color: #fff;
+    line-height: 1.6;
+    padding: 20px;
+}
+
+/* 🔥 HEADER */
+header {
+    text-align: center;
+    margin-bottom: 20px;
+    padding: 20px;
+    background: linear-gradient(45deg, #ff0000, #ff7300);
+    color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.7);
+}
+
+header h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+header p {
+    font-size: 1rem;
+}
+
+/* 🔥 ARTICLE CONTENT */
+article {
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #222;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(255, 0, 0, 0.3);
+}
+
+/* 🔥 HEADINGS */
+h2 {
+    font-size: 1.8rem;
+    color: #ff3b3b;
+    margin: 20px 0 10px;
+    border-bottom: 2px solid #ff3b3b;
+    padding-bottom: 5px;
+}
+
+/* 🔥 PARAGRAPHS */
+p {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+}
+
+/* 🔥 UNORDERED LIST */
+ul {
+    margin: 10px 0;
+    padding-left: 20px;
+}
+
+ul li {
+    font-size: 1rem;
+    margin-bottom: 10px;
+    list-style: square;
+}
+
+/* 🔥 CODE SNIPPETS */
+pre {
+    background: #000;
+    color: #0f0;
+    padding: 15px;
+    border-radius: 5px;
+    overflow-x: auto;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    border-left: 5px solid #ff0000;
+}
+
+/* 🔥 LINKS */
+a {
+    color: #ff7300;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover {
+    color: #ff0000;
+    text-decoration: underline;
+}
+
+/* 🔥 FOOTER */
+footer {
+    text-align: center;
+    margin-top: 30px;
+    padding: 10px;
+    background: #333;
+    color: #fff;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+footer a {
+    color: #ff7300;
+}
+
+footer a:hover {
+    color: #ff0000;
+}
