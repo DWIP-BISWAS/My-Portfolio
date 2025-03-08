@@ -18,37 +18,38 @@
     <meta property="og:type" content="article">
 
     <link rel="stylesheet" href="bstyle.css">
-    <script>
-        function copyCode(btn) {
-            let codeBlock = btn.previousElementSibling.innerText;
-            navigator.clipboard.writeText(codeBlock).then(() => {
-                btn.innerText = "Copied!";
-                setTimeout(() => btn.innerText = "Copy Code", 1500);
-            });
-        }
-    </script>
+    
     <style>
-        pre {
-            background: #222;
+        /* Copy Button Styles */
+        .code-container {
+            position: relative;
+            background: #1e1e1e;
             color: #fff;
             padding: 10px;
             border-radius: 5px;
-            position: relative;
+            margin: 15px 0;
+            font-family: "Courier New", monospace;
             overflow-x: auto;
         }
+
         .copy-btn {
             position: absolute;
             top: 10px;
             right: 10px;
-            background: #ffcc00;
-            color: #000;
+            background: #ff4500;
+            color: white;
             border: none;
             padding: 5px 10px;
             cursor: pointer;
-            border-radius: 3px;
             font-size: 12px;
+            border-radius: 5px;
+        }
+
+        .copy-btn:hover {
+            background: #ff5733;
         }
     </style>
+
 </head>
 <body>
 
@@ -67,11 +68,13 @@
         <p>One of the easiest <strong>SEO hacks</strong> that worked (and still works) is <strong>meta tags optimization.</strong>  
         I <strong>stuffed my website's head</strong> with <strong>200+ keywords</strong>, making it look like this:</p>
 
-        <pre>
+        <div class="code-container">
+            <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+            <pre>
 &lt;meta name="keywords" content="Dwip Biswas, dwipbiswas, SEO hacking, Google ranking, Bing ranking, 
 how to rank on Google, website SEO, backlinks, search engine optimization, Python, AI, growth hacking"&gt;
-        </pre>
-        <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+            </pre>
+        </div>
 
         <p>Google and Bing crawlers were like: "👀 Hold up… this site must be important!" and started <strong>ranking my site higher.</strong></p>
 
@@ -80,7 +83,9 @@ how to rank on Google, website SEO, backlinks, search engine optimization, Pytho
 
         <p>Here's the bot I used (don't try this at home 💀):</p>
 
-        <pre>
+        <div class="code-container">
+            <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+            <pre>
 import requests
 
 # List of backlink sites
@@ -94,8 +99,8 @@ BACKLINK_SITES = [
 for site in BACKLINK_SITES:
     response = requests.get(site)
     print(f"Submitted to {site} → Status: {response.status_code}")
-        </pre>
-        <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
+            </pre>
+        </div>
 
         <p>After running this, <strong>hundreds of backlinks</strong> were pointing to my site, and <strong>Google ranked me even higher!</strong></p>
 
@@ -132,6 +137,16 @@ for site in BACKLINK_SITES:
         <p>💀 Written by <strong>Dwip Biswas</strong></p>
         <p><a href="index.html">← Back to Portfolio</a></p>
     </footer>
+
+    <script>
+        function copyCode(button) {
+            const code = button.nextElementSibling.innerText;
+            navigator.clipboard.writeText(code).then(() => {
+                button.innerText = "Copied!";
+                setTimeout(() => button.innerText = "Copy Code", 2000);
+            });
+        }
+    </script>
 
 </body>
 </html>
