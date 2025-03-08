@@ -18,6 +18,37 @@
     <meta property="og:type" content="article">
 
     <link rel="stylesheet" href="bstyle.css">
+    <script>
+        function copyCode(btn) {
+            let codeBlock = btn.previousElementSibling.innerText;
+            navigator.clipboard.writeText(codeBlock).then(() => {
+                btn.innerText = "Copied!";
+                setTimeout(() => btn.innerText = "Copy Code", 1500);
+            });
+        }
+    </script>
+    <style>
+        pre {
+            background: #222;
+            color: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            position: relative;
+            overflow-x: auto;
+        }
+        .copy-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: #ffcc00;
+            color: #000;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            border-radius: 3px;
+            font-size: 12px;
+        }
+    </style>
 </head>
 <body>
 
@@ -29,22 +60,23 @@
     <article>
 
         <h2>🔥 The Story: How It All Started</h2>
-        <p>It all began as a joke. I was setting up my portfolio, adding random **meta tags**, and messing around with **SEO keywords** just for fun. 💀  
-        Little did I know, I was about to **accidentally hack Google's ranking algorithm** and get my site **indexed at the top.**</p>
+        <p>It all began as a joke. I was setting up my portfolio, adding random <strong>meta tags</strong>, and messing around with <strong>SEO keywords</strong> just for fun. 💀  
+        Little did I know, I was about to <strong>accidentally hack Google's ranking algorithm</strong> and get my site <strong>indexed at the top.</strong></p>
 
         <h2>🚀 Step 1: The Accidental SEO Trick</h2>
-        <p>One of the easiest **SEO hacks** that worked (and still works) is **meta tags optimization.**  
-        I **stuffed my website's head** with **200+ keywords**, making it look like this:</p>
+        <p>One of the easiest <strong>SEO hacks</strong> that worked (and still works) is <strong>meta tags optimization.</strong>  
+        I <strong>stuffed my website's head</strong> with <strong>200+ keywords</strong>, making it look like this:</p>
 
         <pre>
 &lt;meta name="keywords" content="Dwip Biswas, dwipbiswas, SEO hacking, Google ranking, Bing ranking, 
 how to rank on Google, website SEO, backlinks, search engine optimization, Python, AI, growth hacking"&gt;
         </pre>
+        <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
 
-        <p>Google and Bing crawlers were like: "👀 Hold up… this site must be important!" and started **ranking my site higher.**</p>
+        <p>Google and Bing crawlers were like: "👀 Hold up… this site must be important!" and started <strong>ranking my site higher.</strong></p>
 
         <h2>🔥 Step 2: The Backlink Madness</h2>
-        <p>Then I built a **Python backlink bot** that spammed my site URL to **every free SEO backlink submission site.**</p>
+        <p>Then I built a <strong>Python backlink bot</strong> that spammed my site URL to <strong>every free SEO backlink submission site.</strong></p>
 
         <p>Here's the bot I used (don't try this at home 💀):</p>
 
@@ -63,34 +95,35 @@ for site in BACKLINK_SITES:
     response = requests.get(site)
     print(f"Submitted to {site} → Status: {response.status_code}")
         </pre>
+        <button class="copy-btn" onclick="copyCode(this)">Copy Code</button>
 
-        <p>After running this, **hundreds of backlinks** were pointing to my site, and **Google ranked me even higher!**</p>
+        <p>After running this, <strong>hundreds of backlinks</strong> were pointing to my site, and <strong>Google ranked me even higher!</strong></p>
 
         <h2>💀 Step 3: The Google Search Console Trick</h2>
-        <p>Next, I submitted my website to **Google Search Console & Bing Webmaster Tools** manually.  
-        This **forced Google to crawl my site faster**, getting it indexed in hours instead of days.</p>
+        <p>Next, I submitted my website to <strong>Google Search Console & Bing Webmaster Tools</strong> manually.  
+        This <strong>forced Google to crawl my site faster</strong>, getting it indexed in hours instead of days.</p>
 
-        <p>Go to 👉 <a href="https://search.google.com/search-console/about" target="_blank">Google Search Console</a> and **submit your site now.** 🚀</p>
+        <p>Go to 👉 <a href="https://search.google.com/search-console/about" target="_blank">Google Search Console</a> and <strong>submit your site now.</strong> 🚀</p>
 
         <h2>📈 The Aftermath: I Broke the Algorithm</h2>
         <p>One day, I randomly Googled my name and BOOM—  
-        🔥 **My portfolio was on top of Google!**  
-        🔥 **My GitHub profile was fully indexed!**  
-        🔥 **Even my dumb test projects were ranking!**</p>
+        🔥 <strong>My portfolio was on top of Google!</strong>  
+        🔥 <strong>My GitHub profile was fully indexed!</strong>  
+        🔥 <strong>Even my dumb test projects were ranking!</strong></p>
 
-        <p>**Google really thought I was a big deal. 💀**</p>
+        <p><strong>Google really thought I was a big deal. 💀</strong></p>
 
         <h2>📢 How You Can Rank #1 (Without Getting Banned)</h2>
         <ul>
-            <li>🔥 **Step 1:** Use strong **meta tags** (title, description, keywords).</li>
-            <li>🚀 **Step 2:** Submit your site to **Google Search Console & Bing Webmaster Tools.**</li>
-            <li>🔗 **Step 3:** Get **backlinks from high-authority sites** (Reddit, Medium, Twitter, Quora, etc.).</li>
-            <li>💀 **Step 4:** Don’t overdo it—**Google will ban your site if you spam too hard.**</li>
+            <li>🔥 <strong>Step 1:</strong> Use strong <strong>meta tags</strong> (title, description, keywords).</li>
+            <li>🚀 <strong>Step 2:</strong> Submit your site to <strong>Google Search Console & Bing Webmaster Tools.</strong></li>
+            <li>🔗 <strong>Step 3:</strong> Get <strong>backlinks from high-authority sites</strong> (Reddit, Medium, Twitter, Quora, etc.).</li>
+            <li>💀 <strong>Step 4:</strong> Don’t overdo it—<strong>Google will ban your site if you spam too hard.</strong></li>
         </ul>
 
         <h2>👀 Final Thoughts</h2>
-        <p>This was **a fun experiment**, but also a **serious lesson** on how **SEO actually works.**  
-        **If you do it right, you can rank ANYTHING on Google. 🚀**</p>
+        <p>This was <strong>a fun experiment</strong>, but also a <strong>serious lesson</strong> on how <strong>SEO actually works.</strong>  
+        <strong>If you do it right, you can rank ANYTHING on Google. 🚀</strong></p>
 
     </article>
 
